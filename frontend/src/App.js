@@ -41,7 +41,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className={`app-shell ${darkMode ? 'dark' : ''}`}>
         <header className="topbar">
           <Link to="/dashboard" className="brand">AI Interview Coach</Link>
