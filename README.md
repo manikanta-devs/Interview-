@@ -2,6 +2,10 @@
 
 Full-stack MVP with React frontend + Express backend + Gemini prompt-chained multi-agent interview processing.
 
+## Live Demo
+
+- Frontend: https://manikanta-devs.github.io/Interview-/
+
 ## Structure
 
 - `/frontend` - React UI (auth, dashboard, chat, voice, virtual interview, quiz, reports)
@@ -36,3 +40,28 @@ node /home/runner/work/Interview-/Interview-/server.js
 ```
 
 Frontend runs on `http://localhost:3000`, backend on `http://localhost:5000`.
+
+## Deployment
+
+Frontend is deployed with GitHub Pages using GitHub Actions.
+
+### Workflow
+
+- Workflow file: `.github/workflows/deploy-frontend-pages.yml`
+- Trigger: push to `main` (or manual workflow dispatch)
+- Build output: `frontend/build`
+
+### One-time repository setup
+
+1. Open repository settings: `Settings -> Pages`
+2. Under `Build and deployment`, select `Source: GitHub Actions`
+3. Save
+
+### Production environment variable
+
+If backend is deployed publicly, add this repository secret so frontend API calls use production backend:
+
+- Secret name: `REACT_APP_API_URL`
+- Example value: `https://your-backend-domain/api`
+
+Without the secret, frontend defaults to local backend URL (`http://localhost:5000/api`).
