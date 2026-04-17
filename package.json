@@ -1,0 +1,13 @@
+{
+  "name": "interview-platform",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "start": "npm run start --workspace frontend",
+    "test": "npm run test --workspace frontend -- --watchAll=false"
+  }
+}
